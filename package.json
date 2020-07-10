@@ -1,0 +1,28 @@
+{
+  "name": "product-watcher",
+  "version": "1.0.0",
+  "description": "Checks if products are in stock",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "stock"
+  ],
+  "readme": "README.md",
+  "author": "Mark Reyes",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^3.2.0",
+    "axios": "^0.19.2",
+    "loglevel": "^1.6.8",
+    "puppeteer": "^5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-plugin-node": "^11.1.0"
+  },
+  "engines": {
+    "node": ">=11.14.0"
+  }
+}

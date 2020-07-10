@@ -1,0 +1,15 @@
+node_modules
+.vscode
+example*
+README.md
+LICENSE
+.dockerignore
+.gitignore
+Dockerfile
+.eslintrc.json
+*.json
+*.js
+!index.js
+!package.json
+!package-lock.json
+!watchlist.json

@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://www.target.com/p/nintendo-switch-with-neon-blue-and-neon-red-joy-con/-/A-77464001",
+    "preCheck": "./examplePrechecks/targetPrecheck.json",
+    "selectors": {
+      "stock": "button[data-test='shipToStoreButton'], button[data-test='orderPickupButton'], button[data-test='shipItButton']",
+      "productName": "h1[data-test='product-title']"
+    },
+    "evaluator": {
+      "type": "regex",
+      "parameters": {
+        "pattern": "ship|pick",
+        "flags": "i"
+      }
+    }
+  },
+  {
+    "url": "https://www.target.com/p/nintendo-switch-with-gray-joy-con/-/A-77464002",
+    "preCheck": "./examplePrechecks/targetPrecheck.json",
+    "selectors": {
+      "stock": "button[data-test='shipToStoreButton'], button[data-test='orderPickupButton'], button[data-test='shipItButton']",
+      "productName": "h1[data-test='product-title']"
+    },
+    "evaluator": {
+      "type": "regex",
+      "parameters": {
+        "pattern": "ship|pick",
+        "flags": "i"
+      }
+    }
+  },
+  {
+    "url": "https://www.target.com/p/pokemon-shield-nintendo-switch/-/A-54540698",
+    "preCheck": "./examplePrechecks/targetPrecheck.json",
+    "selectors": {
+      "stock": "button[data-test='shipToStoreButton'], button[data-test='orderPickupButton'], button[data-test='shipItButton']",
+      "productName": "h1[data-test='product-title']"
+    },
+    "evaluator": {
+      "type": "regex",
+      "parameters": {
+        "pattern": "ship|pick",
+        "flags": "i"
+      }
+    }
+  }
+]

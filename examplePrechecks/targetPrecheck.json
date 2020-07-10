@@ -1,0 +1,48 @@
+[
+  {
+    "action": "click",
+    "args": ["#storeId-utilityNavBtn"],
+    "description": "clicking location button"
+  },
+  {
+    "action": "focus",
+    "args": ["#zipOrCityState"],
+    "description": "click zip code text box"
+  },
+  {
+    "action": "type",
+    "args": [
+      "#zipOrCityState",
+      "92618",
+      {
+        "delay": 100
+      }
+    ],
+    "description": "entering 92618 zip"
+  },
+  {
+    "action": "click",
+    "args": [
+      "button[data-test='storeLocationSearch-button']",
+      {
+        "delay": 50
+      }
+    ],
+    "description": "submitting zip code"
+  },
+  {
+    "action": "waitFor",
+    "args": [100],
+    "description": "waiting for list to populate"
+  },
+  {
+    "action": "click",
+    "args": ["button[data-test='storeId-listItem-setStore']"],
+    "description": "confirming store"
+  },
+  {
+    "action": "waitFor",
+    "args": [100],
+    "description": "waiting for refresh"
+  }
+]

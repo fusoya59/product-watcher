@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://www.amazon.com/gp/product/B00AFAOAOM",
+    "selectors": {
+      "stock": "#availability span",
+      "productName": "#productTitle"
+    },
+    "evaluator": {
+      "type": "regex",
+      "parameters": {
+        "pattern": "In Stock|only \\d+ left in stock",
+        "flags": "i"
+      }
+    }
+  },
+  {
+    "url": "https://www.amazon.com/Nintendo-Switch-Neon-Mario-Deluxe-Download/dp/B07YZQ9QMD",
+    "selectors": {
+      "stock": "#availability span",
+      "productName": "#productTitle"
+    },
+    "evaluator": {
+      "type": "regex",
+      "parameters": {
+        "pattern": "In Stock|only \\d+ left in stock",
+        "flags": "i"
+      }
+    }
+  },
+  {
+    "url": "https://www.amazon.com/Nintendo-Switch-Console-Mario-Deluxe-Renewed/dp/B07PB6JVVN",
+    "selectors": {
+      "stock": "#availability span",
+      "productName": "#productTitle"
+    },
+    "evaluator": {
+      "type": "regex",
+      "parameters": {
+        "pattern": "In Stock|only \\d+ left in stock",
+        "flags": "i"
+      }
+    }
+  }
+]

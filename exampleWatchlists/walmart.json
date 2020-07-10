@@ -1,0 +1,30 @@
+[
+  {
+    "url": "https://www.walmart.com/ip/Mario-Kart-8-Deluxe-Nintendo-Nintendo-Switch-045496590475/55432571",
+    "selectors": {
+      "stock": "#add-on-atc-container button",
+      "productName": ".prod-ProductTitle"
+    },
+    "evaluator": {
+      "type": "regex",
+      "parameters": {
+        "pattern": "add to cart",
+        "flags": "i"
+      }
+    }
+  },
+  {
+    "url": "https://www.walmart.com/ip/Nintendo-Switch-Bundle-with-Mario-Kart-8-Deluxe-Gray/391444954",
+    "selectors": {
+      "stock": "#add-on-atc-container button",
+      "productName": ".prod-ProductTitle"
+    },
+    "evaluator": {
+      "type": "regex",
+      "parameters": {
+        "pattern": "add to cart",
+        "flags": "i"
+      }
+    }
+  }
+]

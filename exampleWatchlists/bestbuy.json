@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://www.bestbuy.com/site/ring-fit-adventure-nintendo-switch/6352149.p?skuId=6352149",
+    "timeout": 120000,
+    "selectors": {
+      "stock": ".add-to-cart-button",
+      "productName": ".sku-title"
+    },
+    "evaluator": {
+      "type": "regex",
+      "parameters": {
+        "pattern": "add to cart",
+        "flags": "i"
+      }
+    }
+  },
+  {
+    "url": "https://www.bestbuy.com/site/animal-crossing-new-horizons-nintendo-switch/5723316.p?skuId=5723316",
+    "timeout": 120000,
+    "selectors": {
+      "stock": ".add-to-cart-button",
+      "productName": ".sku-title"
+    },
+    "evaluator": {
+      "type": "regex",
+      "parameters": {
+        "pattern": "add to cart",
+        "flags": "i"
+      }
+    }
+  }
+]
