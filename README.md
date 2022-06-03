@@ -32,6 +32,8 @@ Optional environment variables include:
 
 `TO_EMAIL` - email to send notifications to.
 
+`FROM_EMAIL` - sender email.
+
 `IN_STOCK_NOTIFICATION_ONLY` - set this to any value if you want to send notifications only when there is any product in stock.
 
 # Configuration

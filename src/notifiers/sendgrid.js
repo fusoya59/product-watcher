@@ -4,7 +4,7 @@ var apiEndpoint = process.env.NOTIFICATION_URL;
 var axios = require("axios").default;
 var log = require("loglevel");
 
-function notify(to, subject, body) {
+function notify(to, from, subject, body) {
   var data = {
     personalizations: [
       {
@@ -16,7 +16,7 @@ function notify(to, subject, body) {
       },
     ],
     from: {
-      email: "product-watcher@sendgrid.com",
+      email: from,
     },
     subject: subject,
     content: [

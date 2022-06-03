@@ -3,7 +3,7 @@ var notificationEndpoint = process.env.NOTIFICATION_URL;
 var notifyOnlyOnStock = process.env.IN_STOCK_NOTIFICATION_ONLY;
 
 var puppeteer = require("puppeteer");
-var axios = require("axios").default;
+
 var log = require("loglevel");
 var fs = require("fs");
 var notifier = require(`./notifiers/${notificationPlugin}`);
@@ -28,7 +28,7 @@ var defaultExtractors = {
 };
 
 function isNotificationConfigured() {
-  return notificationEndpoint && process.env.TO_EMAIL;
+  return notificationEndpoint && process.env.TO_EMAIL && process.env.FROM_EMAIL;
 }
 
 function shouldNotify(stockCount) {
@@ -176,6 +176,7 @@ Promise.all(products)
     log.debug("stock check complete");
 
     var to = process.env.TO_EMAIL;
+    var from = process.env.FROM_EMAIL;
     var subject = "Nothing in stock";
     if (stockCount > 0) {
       subject = `${firstInStock}`;
@@ -193,7 +194,7 @@ Promise.all(products)
     if (isNotificationConfigured()) {
       if (shouldNotify(stockCount)) {
         log.info(`Notifying ${to}`);
-        return notifier.notify(to, subject, body)
+        return notifier.notify(to, from, subject, body)
           .then(() => {
             return Promise.resolve(stockCount);
           });
