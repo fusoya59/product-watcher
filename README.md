@@ -24,14 +24,11 @@ Optional environment variables include:
 
 `LOG_LEVEL` - set either to `trace`, `error`, `debug`, `info`, `warn`, or `silent`.
 
-`NOTIFICATION_URL` - some endpoint that'll trigger a notification. POSTs a JSON with the payload:
-```json
-{
-  "to": "email to send notification to",
-  "subject": "description of a product that is in stock or not",
-  "body": "description of all products that are or aren't in stock"
-}
-```
+`NOTIFICATION_PLUGIN` - the plugin to use for notification API. Defaults to 'sendgrid'
+
+`NOTIFICATION_URL` - some endpoint that'll trigger a notification.
+
+`SENDGRID_API_KEY` - the sendgrid API key used to for email API.
 
 `TO_EMAIL` - email to send notifications to.
 

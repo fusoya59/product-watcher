@@ -1,13 +1,17 @@
+var notificationPlugin = process.env.NOTIFICATION_DRIVER || "sendgrid";
+var notificationEndpoint = process.env.NOTIFICATION_URL;
+var notifyOnlyOnStock = process.env.IN_STOCK_NOTIFICATION_ONLY;
+
 var puppeteer = require("puppeteer");
 var axios = require("axios").default;
 var log = require("loglevel");
 var fs = require("fs");
+var notifier = require(`./notifiers/${notificationPlugin}`);
 
 var { executeActions } = require("./pageExecutor");
 
 log.setLevel(process.env.LOG_LEVEL || "info");
-var notificationEndpoint = process.env.NOTIFICATION_URL;
-var notifyOnlyOnStock = process.env.IN_STOCK_NOTIFICATION_ONLY;
+
 
 var productsFile = process.argv[2] || "./watchlist.json";
 
@@ -189,12 +193,7 @@ Promise.all(products)
     if (isNotificationConfigured()) {
       if (shouldNotify(stockCount)) {
         log.info(`Notifying ${to}`);
-        return axios
-          .post(notificationEndpoint, {
-            to,
-            body,
-            subject,
-          })
+        return notifier.notify(to, subject, body)
           .then(() => {
             return Promise.resolve(stockCount);
           });
