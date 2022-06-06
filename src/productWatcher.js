@@ -79,7 +79,8 @@ async function isInStock(
   var vals = null;
   try {
     browser = await puppeteer.launch({
-      args: ["--no-sandbox", "--disable-dev-shm-usage"],
+      args: ["--no-sandbox"],
+      headless: "chrome"
     });
     var page = await browser.newPage();
 
@@ -94,6 +95,7 @@ async function isInStock(
       await executeActions(page, JSON.parse(preCheck));
     }
 
+    log.debug(`evaluating stock for ${url}`);
     vals = await page.evaluate(
       (select, extract) => {
         /* eslint-disable-next-line*/
@@ -136,7 +138,7 @@ async function isInStock(
     }
     return vals;
   } catch (err) {
-    throw new Error(`Error when checking stock: ${err.message}`);
+    throw new Error(`Error when checking stock: ${err.message} ${err.stack}`);
   } finally {
     if (browser) {
       log.debug(`shutting down browser for ${url}`);

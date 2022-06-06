@@ -18,7 +18,8 @@ RUN apt install -yq libxcursor1 \
   libcairo2 \
   libgtk-3-0 \
   libx11-xcb1 \
-  libxcb-dri3-0
+  libxcb-dri3-0 \
+  libdbus-glib-1-2
 
 # setup the app
 RUN mkdir -p /product-watcher
@@ -33,6 +34,8 @@ RUN groupadd -r pptruser && \
   mkdir -p /home/pptruser/Downloads && \
   chown -R pptruser:pptruser /home/pptruser && \
   chown -R pptruser:pptruser /product-watcher
+
+# ENV PUPPETEER_PRODUCT=firefox
 
 # install app dependencies
 RUN npm install --production 
